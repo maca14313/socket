@@ -1,5 +1,5 @@
 <?php
-header('Access-Control-Allow-Origin: http://localhost:5173'); // Specific to your frontend's port
+header('Access-Control-Allow-Origin: *'); // Specific to your frontend's port
 header('Content-Type: application/json');
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS"); 
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
