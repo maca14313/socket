@@ -17,4 +17,4 @@ COPY . .
 RUN composer install
 
 # Expose the WebSocket port (optional, based on your app configuration)
-EXPOSE 1000
+EXPOSE 10000
