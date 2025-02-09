@@ -1,20 +1,20 @@
-# Use official PHP image with sockets enabled
+# Use the PHP image
 FROM php:8.2-cli
 
-# Install Composer
+# Install git and unzip (if needed)
+RUN apt-get update && apt-get install -y git unzip
+
+# Copy the composer binary
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Set working directory
+# Set the working directory
 WORKDIR /var/www
 
-# Copy app files
+# Copy the application files
 COPY . .
 
-# Install dependencies
+# Install dependencies using Composer
 RUN composer install
 
-# Expose WebSocket port (make sure to match this with Render's port)
-EXPOSE 10000
-
-# Run WebSocket server
-CMD ["php", "server.php"]
+# Expose the WebSocket port (optional, based on your app configuration)
+EXPOSE 1000
