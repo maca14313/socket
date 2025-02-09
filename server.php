@@ -83,9 +83,10 @@ $server = IoServer::factory(
             new SignalingServer()
         )
     ),
-    8080
+    10000 // Render assigns a dynamic port, which we'll set via an environment variable
 );
 
-echo "WebSocket Signaling Server is running on ws://localhost:8080\n";
+echo "WebSocket Signaling Server is running...\n";
 $server->run();
+
 ?>
